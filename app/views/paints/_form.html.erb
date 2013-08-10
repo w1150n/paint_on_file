@@ -1,0 +1,33 @@
+<%= form_for(@paint) do |f| %>
+  <% if @paint.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@paint.errors.count, "error") %> prohibited this paint from being saved:</h2>
+
+      <ul>
+      <% @paint.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :desc %><br>
+    <%= f.text_field :desc %>
+  </div>
+  <div class="field">
+    <%= f.label :finish %><br>
+    <%= f.text_field :finish %>
+  </div>
+  <div class="field">
+    <%= f.label :color_code %><br>
+    <%= f.text_field :color_code %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

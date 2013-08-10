@@ -1,0 +1,33 @@
+<h1>Listing paints</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Desc</th>
+      <th>Finish</th>
+      <th>Color code</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @paints.each do |paint| %>
+      <tr>
+        <td><%= paint.name %></td>
+        <td><%= paint.desc %></td>
+        <td><%= paint.finish %></td>
+        <td><%= paint.color_code %></td>
+        <td><%= link_to 'Show', paint %></td>
+        <td><%= link_to 'Edit', edit_paint_path(paint) %></td>
+        <td><%= link_to 'Destroy', paint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Paint', new_paint_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @paint.name %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @paint.desc %>
+</p>
+
+<p>
+  <strong>Finish:</strong>
+  <%= @paint.finish %>
+</p>
+
+<p>
+  <strong>Color code:</strong>
+  <%= @paint.color_code %>
+</p>
+
+<%= link_to 'Edit', edit_paint_path(@paint) %> |
+<%= link_to 'Back', paints_path %>
